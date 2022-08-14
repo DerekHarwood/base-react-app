@@ -8,6 +8,14 @@ function App() {
   function addToScore(addedPoint) {
     setScore(score + addedPoint);
   } 
+
+  function createMoleHills(count) {
+    const moles = [];
+    for( let i = 0; i < count; i++){
+      moles.push(<MoleContainer addToScore={addToScore}/>);
+    }
+    return moles;
+  }
   return (
     <div className="App">
       <h1>React a Mole</h1>
