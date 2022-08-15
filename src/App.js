@@ -12,7 +12,7 @@ function App() {
   function createMoleHills(count) {
     const moles = [];
     for( let i = 0; i < count; i++){
-      moles.push(<MoleContainer addToScore={addToScore}/>);
+      moles.push(<MoleContainer key={i} addToScore={addToScore}/>);
     }
     return moles;
   }
@@ -21,7 +21,9 @@ function App() {
       <h1>React a Mole</h1>
       <h2>Score {score}</h2>
       <div className='mole-mounds'>
-      <MoleContainer addToScore={addToScore}/>
+      {
+        createMoleHills(10)
+      }
       </div>
     </div>
   );
